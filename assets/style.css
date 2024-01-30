@@ -2,4 +2,79 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* border: 1px solid black; */
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background: rgb(215,215,210);
+    background: linear-gradient(0deg, rgba(215,215,210,1) 80%, rgba(0,150,135,1) 80%);
+}
+
+/* NOTE left section, chat directory */
+.app-container{
+    width: 80%;
+}
+.chat-directory-bg{
+    background-color: #e6e6e6;
+}
+/* SECTION propic-name-icon*3  */
+.pro-pic{
+    height: 40px;
+}
+/* SECTION enable notifications */
+.notifications{
+    background-color: #8CD7FA;
+}
+.bell-icon{
+    background-color: #F0FAFF;
+    aspect-ratio: 1;
+    margin: 10px 5px;
+}
+/* SECTION chat search */
+.input-group{
+    background-color: #FAFAFA;
+}
+/* SECTION chat list */
+.chat-thumb-bg{
+    background: white;
+}
+.chat-thumb-name{
+    font-size: small;
+}
+.chat-thumb-info{
+    font-size: smaller;
+}
+
+ /* NOTE right section, chat display */
+/* SECTION  speaker account */
+.chat-name{
+    font-size: medium;
+}
+.chat-info{
+    font-size: small;
+}
+
+/* SECTION chat body */
+.chat-body{
+    position: relative;
+    height: 100%;
+    background-image: url(./img/mine.jpg);
+}
+
+/*SECTION chat body*/
+.message{
+    min-width: fit-content;
+    margin: 5px 10px;
+}
+.message.send{
+    background-color: #d2f5b9;
+    text-align: end;
+}
+
+.message.recived{
+    background-color: white;
+}
+.message-send-white{
+    min-width: fit-content;
 }
