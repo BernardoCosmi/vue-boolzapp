@@ -38,6 +38,7 @@ body{
 /* SECTION chat list */
 .chat-thumb-bg{
     background: white;
+    min-width: 100%;
 }
 .chat-thumb-name{
     font-size: small;
@@ -77,4 +78,7 @@ body{
 }
 .message-send-white{
     min-width: fit-content;
+}
+.new-message-section{
+    background-color: #f0ebe6;
 }
