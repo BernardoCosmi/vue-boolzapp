@@ -166,12 +166,23 @@ const app=createApp({
                 }
             ],
             activeChat: 0,
+            selectedElement: null,
         };
     },
     methods:{
         changeChat(index){
             this.activeChat = index;
+            this.selectedElement = index;
         },
+
+        getLastMessageDate() {
+            const activeChat = this.contacts[this.activeChat];
+            const lastMessage = activeChat.messages[activeChat.messages.length - 1];   
+            if (lastMessage) {
+                return lastMessage.date;
+        }
+        return ''; 
+    },
     },  
 
 }).mount('#app');
