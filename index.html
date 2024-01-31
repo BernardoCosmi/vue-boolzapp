@@ -112,11 +112,11 @@
             </div>
 
             <!-- SECTION chat body -->
-            <div class="chat-body col-7 d-flex flex-column px-4 py-2">
+            <div class="chat-body d-flex flex-column ">
 
                 <div v-for="(element, index) in contacts[activeChat].messages" class=" message rounded-2 mx-2 my-1" :class=" (element.status === 'sent') ? 'sent ms-auto' : 'recived me-auto'" >
                         <div class="message-text">{{element.message}}</div>
-                        <div class="message-date">{{element.date}}</div>
+                        <div class="message-date">{{element.date }}</div>
                 </div>
             </div>
 
@@ -126,7 +126,7 @@
                     <i class="fa-regular fa-face-smile" style="color: #afafaf;"></i>
                 </div>
                 <div class="col-10 d-flex align-items-center justify-content-center">
-                    <input type="text" name="newMessage" id="newMessage" class="form-control" placeholder="Scrivi un messaggio">
+                    <input v-model="newMessage" @keyup.enter="sendMessage" type="text" class="form-control" placeholder="Scrivi un messaggio">
                 </div>
                 <div class="col-1 d-flex align-items-center justify-content-center">
                     <i class="fa-solid fa-microphone" style="color: #afafaf;"></i>
