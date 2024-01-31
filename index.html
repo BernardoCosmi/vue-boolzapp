@@ -19,9 +19,9 @@
             <div class="col-12 d-inline-flex p-2 chat-directory-bg justify-content-between">
 
                 <!-- Pro-pic and Name -->
-                <div id="my-account" class="d-flex align-items-center">
+                <div class="d-flex align-items-center">
                     <img src="./assets/img/avatar_io.jpg" class="pro-pic rounded-circle me-1" alt="">
-                    <span class="fw-semibold">Sofia</span>
+                    <span class="fw-semibold">Bernardo</span>
                 </div>
 
                 <!-- Icons group -->
@@ -58,24 +58,24 @@
             </div>
 
             <!-- SECTION chat list -->
-            <div class="chat-thumb-bg">
+            <div class="chat-thumb">
 
                 <!-- ANCHOR chat thumb -->
-                <div v-for="(element, index) in contacts" class="chat-thumb d-flex align-items-center justify-content-between">
+                <div v-for="(element, index) in contacts" class="d-flex align-items-center justify-content-between border-bottom">
                     
-                    <div class="d-flex align-items-center">
+                    <div class="d-flex align-items-center py-1 col-9">
 
                         <div class="chat-thumb-propic mx-2 my-1">
                             <img :src=" `./assets/img/avatar${element.avatar}.jpg` " alt="element.name" class="pro-pic rounded-circle">
                         </div>
     
-                        <div class="d-flex flex-column">
+                        <div class="d-flex flex-column col-9">
                             <span class="fw-semibold chat-thumb-name">{{ element.name}}</span>
                             <span class="chat-thumb-info-text">{{ element.messages[element.messages.length - 1].message }}</span>
                         </div>
                     </div>
 
-                    <div class="chat-thumb-info-date mx-2 col-2">
+                    <div class="chat-thumb-info-date pe-3 col-3">
                         <span>{{ element.messages[element.messages.length - 1].date }}</span>
                     </div>
 
@@ -91,7 +91,7 @@
             <!-- SECTION  speaker account-->
             <div class="col-12 chat-directory-bg d-flex justify-content-between align-items-center px-2 py-1">
 
-                <div class="d-flex align-items-center">
+                <div  class="d-flex align-items-center">
 
                     <div class="chat-thumb-propic mx-2 my-1">
                         <img src="./assets/img/avatar_2.jpg" alt="Michele" class="pro-pic rounded-circle">
@@ -114,20 +114,10 @@
             <!-- SECTION chat body -->
             <div class="chat-body col-7 d-flex flex-column px-4 py-2">
 
-                <div class="d-flex justify-content-end mx-2 my-1">
-                    <div class="message send p-1 rounded-2">
-                        <div class="message-text">lorem</div>
-                        <div class="message-date">12:00</div>
-                    </div>
+                <div v-for="(element, index) in contacts[activeChat].messages" class=" message rounded-2 mx-2 my-1" :class=" (element.status === 'sent') ? 'sent ms-auto' : 'recived me-auto'" >
+                        <div class="message-text">{{element.message}}</div>
+                        <div class="message-date">{{element.date}}</div>
                 </div>
-
-                <div class="d-flex justify-content-start mx-2 my-1">
-                    <div class="message recived p-1 rounded-2">
-                        <div class="message-text">lorem</div>
-                        <div class="message-date">12:00</div>
-                    </div>
-                </div>
-
             </div>
 
             <!-- SECTION message send box -->

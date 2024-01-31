@@ -168,8 +168,7 @@ const app=createApp({
             activeChat: 0,
         };
     },
-    computed:{
-        
+    methods:{
         changeChat(index){
             this.activeChat = index;
         },
