@@ -183,7 +183,32 @@ const app=createApp({
                 return lastMessage.date;
             }
         },
-        
+        randomResponseGenerator() {
+            const responses = [
+                "Ciao!", 
+                "Come stai?", 
+                "Grazie per il messaggio!", 
+                "Che bella giornata!", 
+                "Buongiorno!",
+                "Sono qui per te.",
+                "Hai piani per oggi?",
+                "Posso aiutarti con qualcosa?",
+                "Mi racconti com'è andata la tua giornata?",
+                "Sei fantastico!",
+                "Sono contento di sentirti!",
+                "Abbiamo qualcosa di speciale oggi?",
+                "Ricordati di prenderti una pausa!",
+                "Come va la tua settimana?",
+                "Spero tu stia passando una buona giornata!",
+                "Hai qualche novità interessante da condividere?",
+                "Mi mancavi!",
+                "Sono qui se hai bisogno di parlare.",
+                "Che cosa hai fatto di bello ultimamente?",
+                "Hai beccato la risposta bonus, eccoti un biscotto \uD83C\uDF6A",
+            ];
+            const randomIndex = Math.floor(Math.random() * responses.length);
+            return responses[randomIndex];
+        },
         sendMessage(){
             if(this.newMessage.trim() !== ''){
                 const activeChat = this.contacts[this.activeChat]
@@ -195,8 +220,17 @@ const app=createApp({
                     date: `${currentDate}  ${currentTime}`,
                     message: this.newMessage,
                     status: 'sent',
-                })
+                });
 
+                const randomResponse = this.randomResponseGenerator();
+
+                setTimeout(() => {
+                    activeChat.messages.push({
+                        date: `${currentDate} ${currentTime}`,
+                        message: randomResponse,
+                        status: 'recived',
+                    });
+                }, 1000);
                 this.newMessage = '';
             }
         }
