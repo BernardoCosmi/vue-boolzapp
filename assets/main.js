@@ -168,6 +168,7 @@ const app=createApp({
             activeChat: 0,
             selectedElement: null,
             newMessage: '',
+            searchChat:'',
         };
     },
     methods:{
@@ -235,5 +236,10 @@ const app=createApp({
             }
         }
     },  
+    computed: {
+        filteredContacts() {
+            return this.contacts.filter(contact => contact.name.toLowerCase().includes(this.searchChat.toLowerCase()));
+        },
+    },
 
 }).mount('#app');

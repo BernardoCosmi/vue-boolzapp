@@ -53,7 +53,7 @@
                     <i class="fa-solid fa-magnifying-glass fa-xs" style="color: #afafaf;"></i>
                 </span>
 
-                <input type="text" class="form-control fs-6" placeholder="Cerca o inizia una chat">
+                <input type="text" class="form-control fs-6" v-model="searchChat" placeholder="Cerca o inizia una chat">
 
             </div>
 
@@ -61,7 +61,7 @@
             <div class="chat-thumb">
 
                 <!-- ANCHOR chat thumb -->
-                <div v-for="(element, index) in contacts" @click="changeChat(index)" class="d-flex align-items-center justify-content-between border-bottom" :class="{ 'selected': index === selectedElement }">
+                <div v-for="(element, index) in filteredContacts" @click="changeChat(index)" class="d-flex align-items-center justify-content-between border-bottom" :class="{ 'selected': index === selectedElement }">
                     
                     <div class="d-flex align-items-center py-1 col-9">
 
