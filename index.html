@@ -10,7 +10,7 @@
 </head>
 <body>
     <!-- Contenitore web app -->
-    <div class="app-container m-auto mt-4 d-flex ">
+    <div id="app" class="app-container m-auto mt-4 d-flex ">
 
         <!-- NOTE left section, chat directory-->
         <div class="col-5 d-flex flex-column">
@@ -36,7 +36,7 @@
             <!-- SECTION enable notifications -->
             <div class="notifications col-12 d-flex p-1 gap-1">
                 <!-- Icon -->
-                <div class="bell-icon col-2 d-flex align-items-center justify-content-center rounded-circle">
+                <div class="bell-icon col-1 d-flex align-items-center justify-content-center rounded-circle">
                     <i class="fa-solid fa-bell-slash fa-l" style="color: #8CD7FA;"></i>
                 </div>
                 <!-- Text and link -->
@@ -86,7 +86,7 @@
         </div>
 
         <!-- NOTE right section, chat display -->
-        <div class="col-7 d-flex flex-column">
+        <div class=" chat-section col-7 d-flex flex-column">
 
             <!-- SECTION  speaker account-->
             <div class="col-12 chat-directory-bg d-flex justify-content-between align-items-center px-2 py-1">
@@ -112,22 +112,26 @@
             </div>
 
             <!-- SECTION chat body -->
-            <div class="chat-body col-12 d-flex flex-column flex-wrap">
-                
-                <div class="message send">
-                    #d2f5b9
-                    <div class="message-send-white">
+            <div class="chat-body col-7 d-flex flex-column px-4 py-2">
 
+                <div class="d-flex justify-content-end mx-2 my-1">
+                    <div class="message send p-1 rounded-2">
+                        <div class="message-text">lorem</div>
+                        <div class="message-date">12:00</div>
                     </div>
                 </div>
 
-                <div class="message recived">
-                    hhh
+                <div class="d-flex justify-content-start mx-2 my-1">
+                    <div class="message recived p-1 rounded-2">
+                        <div class="message-text">lorem</div>
+                        <div class="message-date">12:00</div>
+                    </div>
                 </div>
+
             </div>
 
             <!-- SECTION message send box -->
-            <div class="new-message-section col-12 d-flex">
+            <div class="new-message-section col-7 d-flex p-2">
                 <div class="col-1 d-flex align-items-center justify-content-center">
                     <i class="fa-regular fa-face-smile" style="color: #afafaf;"></i>
                 </div>

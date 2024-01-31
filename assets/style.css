@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* border: 1px solid black; */
+    border: 1px solid black;
 }
 body{
     width: 100vw;
@@ -14,6 +14,11 @@ body{
 /* NOTE left section, chat directory */
 .app-container{
     width: 80%;
+    height: 80vh;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -20%);
 }
 .chat-directory-bg{
     background-color: #e6e6e6;
@@ -28,8 +33,12 @@ body{
 }
 .bell-icon{
     background-color: #F0FAFF;
-    aspect-ratio: 1;
+    min-width: 40px;
+    min-height: 40px;
+    max-width: 55px;
+    max-height: 55px;
     margin: 10px 5px;
+    aspect-ratio: 1;
 }
 /* SECTION chat search */
 .input-group{
@@ -37,8 +46,11 @@ body{
 }
 /* SECTION chat list */
 .chat-thumb-bg{
+    position: relative;
+    overflow: auto;
     background: white;
-    min-width: 100%;
+    height: 100%;
+    padding-top: 5px;
 }
 .chat-thumb-name{
     font-size: small;
@@ -48,6 +60,10 @@ body{
 }
 
  /* NOTE right section, chat display */
+.chat-section{
+    position: relative;
+    max-height: 100%;
+}
 /* SECTION  speaker account */
 .chat-name{
     font-size: medium;
@@ -58,27 +74,47 @@ body{
 
 /* SECTION chat body */
 .chat-body{
-    position: relative;
-    height: 100%;
+    width: 600px;
     background-image: url(./img/mine.jpg);
+    position: fixed;
+    top: 55px;
+    right: 0;
+    bottom: 55px;
+    overflow-y: scroll;
+    z-index: -1;
 }
 
 /*SECTION chat body*/
+
 .message{
-    min-width: fit-content;
-    margin: 5px 10px;
+    text-align: start;
+    padding: 2px 5px;
+    max-width: 60%;
+    max-height: fit-content;
+}
+.message-text{
+    text-align: start;
+    overflow-wrap: break-word;
+    word-break: break-all;
 }
 .message.send{
     background-color: #d2f5b9;
+}
+.message.recived{
+    background-color: white;
+    max-height: fit-content;
+}
+.message-date{
+    font-size: x-small;
     text-align: end;
 }
 
-.message.recived{
-    background-color: white;
-}
-.message-send-white{
-    min-width: fit-content;
-}
+
+
+
 .new-message-section{
     background-color: #f0ebe6;
+    position: fixed;
+    bottom: 0;
+    right: 0;
 }
