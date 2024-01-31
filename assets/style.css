@@ -2,11 +2,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 body{
-    width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     background: rgb(215,215,210);
     background: linear-gradient(0deg, rgba(215,215,210,1) 80%, rgba(0,150,135,1) 80%);
 }
@@ -23,27 +22,30 @@ body{
 .chat-directory-bg{
     background-color: #e6e6e6;
 }
+
 /* SECTION propic-name-icon*3  */
 .pro-pic{
     height: 40px;
 }
+
 /* SECTION enable notifications */
 .notifications{
     background-color: #8CD7FA;
 }
+
 .bell-icon{
     background-color: #F0FAFF;
-    min-width: 40px;
-    min-height: 40px;
-    max-width: 55px;
-    max-height: 55px;
+    width: 50px;
+    height: 50px;
     margin: 10px 5px;
     aspect-ratio: 1;
 }
+
 /* SECTION chat search */
 .input-group{
     background-color: #FAFAFA;
 }
+
 /* SECTION chat list */
 .chat-thumb-bg{
     position: relative;
@@ -55,8 +57,11 @@ body{
 .chat-thumb-name{
     font-size: small;
 }
-.chat-thumb-info{
+.chat-thumb-info-text{
     font-size: smaller;
+}
+.chat-thumb-info-date{
+    font-size: x-small;
 }
 
  /* NOTE right section, chat display */
@@ -64,6 +69,7 @@ body{
     position: relative;
     max-height: 100%;
 }
+
 /* SECTION  speaker account */
 .chat-name{
     font-size: medium;
@@ -80,22 +86,15 @@ body{
     top: 55px;
     right: 0;
     bottom: 55px;
-    overflow-y: scroll;
+    overflow-y: auto;
     z-index: -1;
 }
-
-/*SECTION chat body*/
-
 .message{
     text-align: start;
     padding: 2px 5px;
-    max-width: 60%;
+    max-width: 65%;
+    min-width: 30%;
     max-height: fit-content;
-}
-.message-text{
-    text-align: start;
-    overflow-wrap: break-word;
-    word-break: break-all;
 }
 .message.send{
     background-color: #d2f5b9;
@@ -109,9 +108,7 @@ body{
     text-align: end;
 }
 
-
-
-
+/* SECTION input new message */
 .new-message-section{
     background-color: #f0ebe6;
     position: fixed;

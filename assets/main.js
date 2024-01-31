@@ -5,7 +5,7 @@ const app=createApp({
             contacts: [
                 {
                 name: 'Michele',
-                avatar: './img/avatar_1.png',
+                avatar: '_1',
                 visible: true,
                 messages: [
                     {
@@ -27,7 +27,7 @@ const app=createApp({
                 },
                 {
                 name: 'Fabio',
-                avatar: './img/avatar_2.png',
+                avatar: '_2',
                 visible: true,
                 messages: [
                     {
@@ -49,7 +49,7 @@ const app=createApp({
                 },
                 {
                 name: 'Samuele',
-                avatar: './img/avatar_3.png',
+                avatar: '_3',
                 visible: true,
                 messages: [
                     {
@@ -71,7 +71,7 @@ const app=createApp({
                 },
                 {
                 name: 'Alessandro B.',
-                avatar: './img/avatar_4.png',
+                avatar: '_4',
                 visible: true,
                 messages: [
                     {
@@ -88,7 +88,7 @@ const app=createApp({
                 },
                 {
                 name: 'Alessandro L.',
-                avatar: './img/avatar_5.png',
+                avatar: '_5',
                 visible: true,
                 messages: [
                     {
@@ -105,7 +105,7 @@ const app=createApp({
                 },
                 {
                 name: 'Claudia',
-                avatar: './img/avatar_6.png',
+                avatar: '_6',
                 visible: true,
                 messages: [
                     {
@@ -127,7 +127,7 @@ const app=createApp({
                 },
                 {
                 name: 'Federico',
-                avatar: './img/avatar_7.png',
+                avatar: '_7',
                 visible: true,
                 messages: [
                     {
@@ -144,7 +144,7 @@ const app=createApp({
                 },
                 {
                 name: 'Davide',
-                avatar: './img/avatar_8.png',
+                avatar: '_8',
                 visible: true,
                 messages: [
                     {
@@ -164,12 +164,15 @@ const app=createApp({
                     }
                     ],
                 }
-                ],
+            ],
+            activeChat: 0,
         };
     },
     computed:{
-        currentContact(){
-            return this.contacts[this.currentIndex]
+        
+        changeChat(index){
+            this.activeChat = index;
         },
-    }
+    },  
+
 }).mount('#app');
