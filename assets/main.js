@@ -175,6 +175,11 @@ const app=createApp({
         changeChat(index){
             this.activeChat = index;
             this.selectedElement = index;
+    
+            // prendo l'indice nella lista originale (non filtrata)
+            const originalIndex = this.contacts.indexOf(this.filteredContacts[index]);
+    
+            this.activeChat = originalIndex
         },
 
         getLastMessageDate() {
@@ -234,7 +239,8 @@ const app=createApp({
                 }, 1000);
                 this.newMessage = '';
             }
-        }
+        },
+
     },  
     computed: {
         filteredContacts() {

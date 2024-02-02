@@ -116,6 +116,7 @@
 
                 <div v-for="(element, index) in contacts[activeChat].messages" class=" message rounded-2 mx-2 my-1" :class=" (element.status === 'sent') ? 'sent ms-auto' : 'recived me-auto'" >
                         <div class="message-text">{{element.message}}</div>
+                        
                         <div class="message-date">{{element.date }}</div>
                 </div>
             </div>
